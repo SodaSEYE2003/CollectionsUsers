@@ -3,45 +3,54 @@ using System.Collections;
 
 namespace UsageCollections
 {
-    class Program
+    //2.Lire
+    //   les données à partir du clavier.Pour chaque étudiant saisir ses 2
+    //   notes.Ranger ces données dans une SortedList,
+    // la clé est le NO.
+    //     NO { get; set; }
+    //    Nom { get; set; }
+    //    PréNom { get; set; }
+    //    NoteCC { get; set; }
+    //    NoteDevoir { get; set; }
+class Program
     {
         static void Main(string[] args)
         {
-            SortedList lstEmployé = new SortedList();
-            lstEmployé.Add("372288Z", new Employé { Nom = "Fall ",
-                PréNom = "Racine ",
-                Matricule = "372288Z" });
-            Employé layssa = new Employé()
+            SortedList lstEtudiant = new SortedList();
+            lstEtudiant.Add("1", new Etudiant { No = 1,
+                Nom = "THIAM ",
+                Prénom = "Fatim ",
+                NoteCC= 12,
+                NoteDevoir = 18,
+            });
+            Etudiant MALsia = new Etudiant()
             {
-                Nom = "Diaw ",
-                PréNom= "Layssa ",
-                Matricule = "501603A"
-                };
-            Employé ngor = new Employé()
-                {
-                Nom = "Sène ",
-                PréNom = "Ngor ",
-                Matricule = "500125B"
-                };
-            lstEmployé.Add(layssa.Matricule, layssa);
-            lstEmployé.Add(ngor.Matricule, ngor);
+                No = 2,
+                Nom = "SECK",
+                Prénom = "Samba",
+                NoteCC = 14,
+                NoteDevoir = 16,S
+            };
+           
+            lstEtudiant.Add(MALsia.NO, MALsia);
+           
 
-            Employé unEmployé = (Employé)lstEmployé["372288Z"];
+            Etudiant unEtudiant = (Etudiant)lstEtudiant[1];
 
-            if (unEmployé != null)
+            if (unEtudiant != null)
             {
-                Console.WriteLine($"Matricule:{unEmployé.Matricule}, Prénom: {unEmployé.PréNom}, Nom: {unEmployé.Nom}, ");
+                Console.WriteLine($"Matricule:{unEtudiant.NO}, Prénom: {unEtudiant.PréNom}, Nom: {unEtudiant.Nom}, ");
 
             }
 
-            Console.WriteLine(  "Appuyer sur Entrée pour afficher la liste des employés ");
+            Console.WriteLine(  "Appuyer sur Entrée pour afficher la liste des étudiants");
             Console.ReadLine();
 
-            foreach (DictionaryEntry employé in lstEmployé)
+            foreach (DictionaryEntry etudiant in lstEtudiant)
             {
-                Employé autreEmployé = (Employé)employé.Value;
-                Console.WriteLine($"Matricule: {autreEmployé.Matricule}, " +
-                    $"PréNom: {autreEmployé.PréNom},Nom: {autreEmployé.Nom}");
+                Etudiant autreEtudiant = (Etudiant)etudiant.Value;
+                Console.WriteLine($"Numéro d'ordre: {autreEtudiant.NO}, " +
+                    $"PréNom: {autreEtudiant.PréNom},Nom: {autreEtudiant.Nom}");
             }
             Console.ReadLine();
         }
