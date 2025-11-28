@@ -8,6 +8,8 @@ namespace UsageCollections
     public class Employé
     {
         public string Nom { get; set; }
-        public int Age { get; set; }
+        public string PréNom { get; set; }
+
+        public string Matricule { get; set; }
     }
 }
