@@ -6,15 +6,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace UsageCollections
 {
-    //2.Lire
-    //   les données à partir du clavier.Pour chaque étudiant saisir ses 2
-    //   notes.Ranger ces données dans une SortedList,
-    // la clé est le NO.
-    //     NO { get; set; }
-    //    Nom { get; set; }
-    //    PréNom { get; set; }
-    //    NoteCC { get; set; }
-    //    NoteDevoir { get; set; }
+  
 class Program
     {
         static void Main(string[] args)
